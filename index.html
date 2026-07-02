@@ -3,236 +3,238 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Route & Country Page Cleanup — Rollout Plan · Suntransfers</title>
+<title>SEO Roadmap July 2026 — Cleanup · Schemas · Airport Pages · Suntransfers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#ffffff; --panel:#f8fafc; --ink:#0f172a; --muted:#64748b; --line:#e2e8f0;
-    --be:#2563eb; --fe:#7c3aed; --content:#16a34a; --spike:#f59e0b; --phase:#1e293b; --measure:#0891b2;
-    --weekend:#f1f5f9; --jhon:#fff7ed; --jhonline:#fb923c;
-    --cell:28px; --label:230px;
+    --paper:#fbfaf7; --panel:#f4f2ec; --ink:#1a2332; --muted:#6b7280; --line:#e4e1d8;
+    --dev:#1d6fb8; --content:#2b8a3e; --schema:#c2410c; --phase:#1a2332; --measure:#0e7490;
+    --weekend:#efede6; --jhon:#fdf3e3; --jhonline:#e8a33d; --sergio:#fbeaea; --sergioline:#c94f4f;
+    --accent:#c2410c;
+    --cell:30px; --label:270px;
+    --sans:'IBM Plex Sans',sans-serif; --disp:'Bricolage Grotesque',sans-serif; --mono:'IBM Plex Mono',monospace;
   }
   *{box-sizing:border-box}
-  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.45}
-  .wrap{max-width:1180px;margin:0 auto;padding:32px 24px 64px}
-  header.top h1{font-size:30px;margin:0 0 4px;letter-spacing:-.02em}
-  header.top .sub{color:var(--muted);font-size:15px}
-  header.top .range{display:inline-block;margin-top:10px;background:var(--phase);color:#fff;font-weight:600;font-size:13px;padding:5px 12px;border-radius:999px}
-  h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:40px 0 14px;font-weight:700}
+  body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.5}
+  .wrap{max-width:1260px;margin:0 auto;padding:40px 28px 72px}
+
+  /* editorial header */
+  header.top{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;border-bottom:3px solid var(--ink);padding-bottom:22px;flex-wrap:wrap}
+  header.top h1{font-family:var(--disp);font-size:40px;font-weight:800;margin:0;letter-spacing:-.03em;line-height:1.05}
+  header.top h1 em{font-style:normal;color:var(--accent)}
+  header.top .sub{color:var(--muted);font-size:14px;margin-top:8px;max-width:560px}
+  header.top .range{font-family:var(--mono);font-size:13px;font-weight:600;background:var(--ink);color:var(--paper);padding:8px 14px;white-space:nowrap}
+
+  h2{font-family:var(--disp);font-size:19px;font-weight:700;letter-spacing:-.01em;margin:48px 0 16px;display:flex;align-items:baseline;gap:12px}
+  h2 .idx{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--accent)}
 
   /* milestone cards */
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-  .card{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--panel);border-left:4px solid var(--phase)}
-  .card.s1{border-left-color:var(--be)} .card.s2{border-left-color:var(--fe)} .card.s3{border-left-color:var(--content)}
-  .card .when{font-size:12px;color:var(--muted);font-weight:600}
-  .card h3{margin:4px 0 8px;font-size:16px}
-  .card p{margin:0;font-size:13px;color:#334155}
-  .card .metric{margin-top:10px;font-size:12px;font-weight:600;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px 9px;display:inline-block}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .card{border:1px solid var(--line);background:#fff;padding:18px 20px;border-top:4px solid var(--phase)}
+  .card.s1{border-top-color:var(--dev)} .card.s2{border-top-color:var(--schema)} .card.s3{border-top-color:var(--content)}
+  .card .when{font-family:var(--mono);font-size:11px;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:.04em}
+  .card h3{font-family:var(--disp);margin:6px 0 8px;font-size:17px;font-weight:700}
+  .card p{margin:0;font-size:13px;color:#3f4756}
+  .card .metric{margin-top:12px;font-family:var(--mono);font-size:11.5px;font-weight:600;color:var(--ink);background:var(--panel);border:1px solid var(--line);padding:6px 10px;display:inline-block}
 
   /* legend */
-  .legend{display:flex;flex-wrap:wrap;gap:14px;margin:8px 0 6px;font-size:12px;color:#334155}
-  .legend span{display:inline-flex;align-items:center;gap:6px}
-  .sw{width:13px;height:13px;border-radius:3px;display:inline-block}
+  .legend{display:flex;flex-wrap:wrap;gap:16px;margin:10px 0 8px;font-size:12px;color:#3f4756}
+  .legend span{display:inline-flex;align-items:center;gap:7px}
+  .sw{width:13px;height:13px;border-radius:2px;display:inline-block}
 
   /* gantt */
-  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:#fff}
+  .scroll{overflow-x:auto;border:1px solid var(--line);background:#fff}
   .gantt{width:max-content;min-width:100%}
   .grow{display:flex;align-items:stretch;border-bottom:1px solid var(--line)}
+  .grow:nth-child(even) .label{background:#fdfcf9}
   .grow:last-child{border-bottom:none}
-  .label{width:var(--label);flex:0 0 var(--label);padding:7px 12px;font-size:12.5px;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;background:#fff}
-  .label b{font-weight:600}
-  .label .own{color:var(--muted);font-size:11px}
-  .track{position:relative;height:38px;flex:0 0 auto}
+  .label{width:var(--label);flex:0 0 var(--label);padding:10px 14px;font-size:12.5px;border-right:2px solid var(--ink);display:flex;flex-direction:column;justify-content:center;background:#fff;gap:2px}
+  .label b{font-family:var(--disp);font-weight:700;font-size:13.5px;letter-spacing:-.01em}
+  .label .own{color:var(--muted);font-size:11px;line-height:1.35}
+  .track{position:relative;height:60px;flex:0 0 auto}
   .cols{position:absolute;inset:0;display:flex}
-  .col{width:var(--cell);flex:0 0 var(--cell);border-right:1px solid #f1f5f9}
+  .col{width:var(--cell);flex:0 0 var(--cell);border-right:1px solid #f2f0e9}
   .col.we{background:var(--weekend)}
   .col.jh{background:var(--jhon)}
-  .bar{position:absolute;top:7px;height:24px;border-radius:6px;color:#fff;font-size:11px;font-weight:600;display:flex;align-items:center;padding:0 8px;white-space:nowrap;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.12)}
-  .bar.be{background:var(--be)} .bar.fe{background:var(--fe)} .bar.content{background:var(--content)}
-  .bar.spike{background:var(--spike)} .bar.measure{background:var(--measure)}
-  .bar.phase{background:var(--phase);opacity:.92;font-weight:700}
+  .col.sg{background:var(--sergio)}
+  .col.both{background:linear-gradient(135deg,var(--jhon) 50%,var(--sergio) 50%)}
+  .col.today{box-shadow:inset 2px 0 0 var(--accent), inset -2px 0 0 var(--accent)}
+  .bar{position:absolute;top:8px;height:44px;border-radius:4px;color:#fff;font-size:10.5px;font-weight:600;display:flex;align-items:center;padding:4px 9px;line-height:1.25;overflow:hidden;box-shadow:0 1px 3px rgba(26,35,50,.18)}
+  .bar.dev{background:var(--dev)} .bar.content{background:var(--content)}
+  .bar.schema{background:var(--schema)} .bar.measure{background:var(--measure)}
+  .bar.phase{background:var(--phase);font-weight:700}
   /* header row */
-  .head .label{background:var(--panel);font-weight:700;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+  .head .label{background:var(--panel);font-weight:700;color:var(--muted);font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;font-family:var(--mono)}
   .head .track{height:auto}
-  .dcell{width:var(--cell);flex:0 0 var(--cell);text-align:center;padding:6px 0 5px;font-size:10px;border-right:1px solid #f1f5f9;background:var(--panel)}
-  .dcell.we{background:#eef2f6;color:#94a3b8}
+  .dcell{width:var(--cell);flex:0 0 var(--cell);text-align:center;padding:7px 0 6px;font-size:10.5px;font-family:var(--mono);border-right:1px solid #f2f0e9;background:var(--panel)}
+  .dcell.we{background:#e9e6dc;color:#9aa0ab}
   .dcell.jh{background:var(--jhon)}
-  .dcell .dow{display:block;color:#94a3b8;font-size:9px}
-  .grouprow .label{background:#0f172a;color:#fff;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.06em}
-  .grouprow .track{background:#0f172a;height:26px}
-  .jhflag{position:absolute;top:0;bottom:0;border-left:2px dashed var(--jhonline);border-right:2px dashed var(--jhonline);pointer-events:none}
-  .jhlbl{position:absolute;top:2px;font-size:10px;color:#c2410c;font-weight:700;white-space:nowrap}
+  .dcell.sg{background:var(--sergio)}
+  .dcell.both{background:linear-gradient(135deg,var(--jhon) 50%,var(--sergio) 50%)}
+  .dcell.today{box-shadow:inset 0 3px 0 var(--accent);color:var(--accent);font-weight:600}
+  .dcell .dow{display:block;color:#9aa0ab;font-size:9px}
 
-  /* impact */
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-  .stat{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--panel)}
-  .stat .n{font-size:24px;font-weight:800;letter-spacing:-.02em}
-  .stat .l{font-size:12px;color:#334155;margin-top:2px}
-  .stat.r301{border-top:3px solid var(--measure)} .stat.d410{border-top:3px solid #dc2626}
-  .stat.dest{border-top:3px solid var(--spike)} .stat.tail{border-top:3px solid #94a3b8}
+  /* stats */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .stat{border:1px solid var(--line);background:#fff;padding:16px 18px}
+  .stat .n{font-family:var(--mono);font-size:26px;font-weight:600;letter-spacing:-.02em}
+  .stat .l{font-size:12px;color:#3f4756;margin-top:4px}
+  .stat.r301{border-top:4px solid var(--measure)} .stat.d410{border-top:4px solid var(--schema)}
+  .stat.dest{border-top:4px solid var(--content)} .stat.tail{border-top:4px solid #9aa0ab}
 
-  .universe{margin-top:16px}
-  .ubar{display:flex;height:34px;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
-  .useg{display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700}
-  .ulegend{display:flex;flex-wrap:wrap;gap:16px;margin-top:10px;font-size:12px;color:#334155}
-  .note{margin-top:12px;font-size:12.5px;color:#334155;background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--content);border-radius:8px;padding:10px 14px}
+  .universe{margin-top:18px}
+  .ubar{display:flex;height:36px;overflow:hidden;border:1px solid var(--line)}
+  .useg{display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;font-family:var(--mono)}
+  .ulegend{display:flex;flex-wrap:wrap;gap:18px;margin-top:10px;font-size:12px;color:#3f4756}
+  .note{margin-top:14px;font-size:12.5px;color:#3f4756;background:#fff;border:1px solid var(--line);border-left:4px solid var(--content);padding:12px 16px}
+  .note .tag{font-family:var(--mono);font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--content);margin-right:8px}
 
   /* decisions */
   .decisions{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-  .dec{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#fff}
-  .dec .tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
-  .dec.warn{border-left:4px solid #dc2626} .dec.warn .tag{color:#dc2626}
-  .dec.clar{border-left:4px solid var(--spike)} .dec.clar .tag{color:#b45309}
-  .dec.low{border-left:4px solid var(--content)} .dec.low .tag{color:#15803d}
-  .dec h4{margin:6px 0 5px;font-size:14px}
-  .dec p{margin:0;font-size:12.5px;color:#475569}
-  footer{margin-top:42px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
-  @media(max-width:760px){.cards,.stats,.decisions{grid-template-columns:1fr}}
+  .dec{border:1px solid var(--line);background:#fff;padding:15px 18px}
+  .dec .tag{font-family:var(--mono);font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+  .dec.warn{border-left:4px solid #b03030} .dec.warn .tag{color:#b03030}
+  .dec.clar{border-left:4px solid #e8a33d} .dec.clar .tag{color:#a06a12}
+  .dec.low{border-left:4px solid var(--content)} .dec.low .tag{color:#22703a}
+  .dec h4{font-family:var(--disp);margin:6px 0 5px;font-size:14.5px;font-weight:700}
+  .dec p{margin:0;font-size:12.5px;color:#4b5563}
+  footer{margin-top:48px;padding-top:18px;border-top:3px solid var(--ink);color:var(--muted);font-size:12px;font-family:var(--mono)}
+  @media(max-width:780px){.cards,.stats,.decisions{grid-template-columns:1fr}header.top h1{font-size:30px}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="top">
-    <h1>Route &amp; Country Page Cleanup — Rollout Plan</h1>
-    <div class="sub">Suntransfers · SEO · source: Natzir's route analysis (GA4 × Bookings × Search Console)</div>
-    <div class="range">1 – 31 July 2026</div>
+    <div>
+      <h1>SEO Roadmap <em>July 2026</em></h1>
+      <div class="sub">Suntransfers · Route cleanup + Tier-1 schemas (AI search) + Top-20 airport landing pages — one plan, three workstreams.</div>
+    </div>
+    <div class="range">1 — 31 JUL 2026</div>
   </header>
 
-  <h2>🎯 Milestones</h2>
+  <h2><span class="idx">01</span> The three workstreams</h2>
   <div class="cards">
     <div class="card s1">
-      <div class="when">Sprint 1 · 1–13 Jul</div>
-      <h3>Route cleanup</h3>
-      <p>Redirect the routes that still rank (301), delete the dead ones (410), and remove the destination pages.</p>
-      <div class="metric">6,655 × 301 · 10,487 × 410 · 0 ranking lost</div>
+      <div class="when">Destinations ship Fri 3 Jul · sprint from 13 Jul</div>
+      <h3>Route &amp; country cleanup</h3>
+      <p><b>Remove destinations (Jhon) ready Friday 3 Jul</b> — pages removed, airport-page route links repointed to the country page, anchored to the clicked airport. <b>Sprint from 13 Jul: protect the routes performing well + 301/410 cleanup.</b> Country revamp end of July → August.</p>
+      <div class="metric">Protect first · 6,655 × 301 · 10,487 × 410</div>
     </div>
     <div class="card s2">
-      <div class="when">Sprint 2 · 21–27 Jul</div>
-      <h3>Country revamp</h3>
-      <p>Fix broken links so the country page only shows routes with a real landing, and add top routes per market on the airport page.</p>
-      <div class="metric">Country page = the discovery hub</div>
+      <div class="when">13–31 Jul · one workstream, five deliverables</div>
+      <h3>Tier-1 schemas · AI search</h3>
+      <p>From <b>13 Jul</b>, in sequence: FAQPage (13–17, template inherited by new airport pages) → Organization @id + About Us (20–22) → Offers with fare feed (23–28) → Service + @graph consolidation with Rich Results validation (29–31 → Aug).</p>
+      <div class="metric">4 Tier-1 types · Rich Results: 0 errors</div>
     </div>
     <div class="card s3">
-      <div class="when">Sprint 3 · end of July</div>
-      <h3>Content &amp; polish</h3>
-      <p>Country content for top markets, breadcrumb with all routes linked, and lazy-render of long pages.</p>
-      <div class="metric">ES · TR · EG · DO · MA · GR · PT</div>
+      <div class="when">All July · Sergio · 4–5 pages/week (reduced scope)</div>
+      <h3>Airport pages content</h3>
+      <p>Scope per page: <b>trust block + FAQs + meta</b>. Malaga this week | Faro, Lanzarote, Fuerteventura, Rhodes wk 6–13 (out 9) | Heraklion, Girona, Larnaca, Corfu, Chania 20–24 | Punta Cana, Izmir 27–31.</p>
+      <div class="metric">12/12 drafted in July · top-20 set complete</div>
     </div>
   </div>
 
-  <h2>📅 Timeline</h2>
+  <h2><span class="idx">02</span> Timeline</h2>
   <div class="legend">
     <span><i class="sw" style="background:var(--phase)"></i> Sprint / phase</span>
-    <span><i class="sw" style="background:var(--be)"></i> Backend · Facundo</span>
-    <span><i class="sw" style="background:var(--fe)"></i> Frontend · Jhon / Julio</span>
+    <span><i class="sw" style="background:var(--dev)"></i> Dev · publish / ship</span>
+    <span><i class="sw" style="background:var(--schema)"></i> Schema · Tier-1</span>
     <span><i class="sw" style="background:var(--content)"></i> Content / SEO · Sergio</span>
-    <span><i class="sw" style="background:var(--spike)"></i> Spike / analysis</span>
     <span><i class="sw" style="background:var(--measure)"></i> Measure</span>
     <span><i class="sw" style="background:var(--jhon);border:1px solid var(--jhonline)"></i> Jhon out (6–10 Jul)</span>
+    <span><i class="sw" style="background:var(--sergio);border:1px solid var(--sergioline)"></i> Sergio out (9 · 14–17 Jul)</span>
   </div>
   <div class="scroll"><div class="gantt" id="gantt"></div></div>
 
-  <h2>📊 Cleanup impact — the 544,726 route universe</h2>
+  <h2><span class="idx">03</span> July commitments at a glance</h2>
   <div class="stats">
-    <div class="stat r301"><div class="n">6,655</div><div class="l">301 redirects — preserve ranking &amp; link equity (36,555 organic clicks protected)</div></div>
-    <div class="stat d410"><div class="n">10,487</div><div class="l">410 deletes — 0 ranking, 0 bookings, 0 presence</div></div>
-    <div class="stat dest"><div class="n">3,626</div><div class="l">destination URLs removed — 1.61% crawl budget for just 6 clicks</div></div>
-    <div class="stat tail"><div class="n">437,176</div><div class="l">review tail — zero-signal pages, handled in parallel</div></div>
+    <div class="stat r301"><div class="n">17,142</div><div class="l">route URLs actioned in Sprint 1 — 6,655 × 301 + 10,487 × 410 (+3,626 destination URLs removed)</div></div>
+    <div class="stat d410"><div class="n">4</div><div class="l">Tier-1 schema types shipped on gateway pages — FAQPage, Offers, Organization, Service</div></div>
+    <div class="stat dest"><div class="n">12/12</div><div class="l">airport pages drafted in July — Sergio at 4–5/week with reduced scope: trust block + FAQs + meta per page</div></div>
+    <div class="stat tail"><div class="n">18</div><div class="l">Sergio working days in July — vacations (9 Jul · 14–17 Jul) shape the weekly batches</div></div>
   </div>
   <div class="universe">
     <div class="ubar">
-      <div class="useg" style="width:80.3%;background:#94a3b8" title="Review tail">Review · 437,176 (80%)</div>
-      <div class="useg" style="width:9.9%;background:#0891b2" title="SEO-keep">SEO-keep · 53,664</div>
-      <div class="useg" style="width:9.9%;background:#16a34a" title="Linked tiers">Linked · 53,886</div>
+      <div class="useg" style="width:40%;background:#2b8a3e" title="Done — Hi Experience">Today · 8/20 pages</div>
+      <div class="useg" style="width:25%;background:#1d6fb8" title="Published by 24 Jul">By 24 Jul · 13/20 pages</div>
+      <div class="useg" style="width:35%;background:#0e7490" title="Published by 31 Jul">By 31 Jul · 20/20 pages</div>
     </div>
     <div class="ulegend">
-      <span><i class="sw" style="background:#94a3b8"></i> Review — no bookings, no ranking, &lt;50 sessions</span>
-      <span><i class="sw" style="background:#0891b2"></i> SEO-keep — ranks in Google</span>
-      <span><i class="sw" style="background:#16a34a"></i> Linked — Home / Country / Airport / Related</span>
+      <span><i class="sw" style="background:#2b8a3e"></i> Live today (8) — Barcelona, Majorca, Alicante, Tenerife S, Gran Canaria, Dalaman, Antalya, Hurghada</span>
+      <span><i class="sw" style="background:#1d6fb8"></i> By 24 Jul (+5 → 13) — Malaga, Faro, Lanzarote, Fuerteventura, Rhodes</span>
+      <span><i class="sw" style="background:#0e7490"></i> By 31 Jul (+7 → 20) — Heraklion, Girona, Larnaca, Corfu, Chania, Punta Cana, Izmir</span>
     </div>
-    <div class="note">✅ 546,992 bookings reconciled — <b>none lost</b>. 2,422 ranking pages locked as untouchable (Phase 0 · Protect). Nothing that ranks or converts is deleted.</div>
+    <div class="note"><span class="tag">Dependency</span> Devs publish only when Sergio's content is ready. Sprint 13–24: publish <b>Malaga | Faro, Lanzarote, Fuerteventura, Rhodes</b> (content ready 13 Jul). Then 27–31: the remaining 7 — batch 3 (ready 24 Jul) plus Punta Cana &amp; Izmir as content lands at month end.</div>
   </div>
 
-  <h2>⚠️ Open decisions &amp; risks</h2>
-  <div class="decisions">
-    <div class="dec warn"><div class="tag">Decision needed</div><h4>Routes shown on airport page</h4><p>Today shows 6. Natzir's tier says 25; Julio suggested 18 so the layout doesn't break. <b>Confirm N before Sprint 2.</b></p></div>
-    <div class="dec clar"><div class="tag">Clarify</div><h4>Sitemap exclusion</h4><p>Is excluding no-landing routes from the sitemap already covered by the <code>has_landing_page</code> DB flag, or do we add logic? <b>Check code with Claudio.</b></p></div>
-    <div class="dec clar"><div class="tag">Clarify</div><h4>Missing-route behaviour</h4><p>When a route doesn't exist: 301 to its airport or to an active twin (London → SW5)? Verify current behaviour — it may already 301. <b>Spike, week 3.</b></p></div>
-    <div class="dec low"><div class="tag">Low risk</div><h4>Country content owner</h4><p>Tips &amp; country content owned by Sergio (SEO/content), only if there's slack. Doesn't block the cleanup.</p></div>
-  </div>
 
   <footer>
-    Route &amp; Country Page Cleanup · Methodology: Protect → 301 → 410 → Review → Link → Measure ·
-    Owners: dev / technical SEO (301 &amp; 410), business (reactivation), SEO / content (linking) · Last updated: 22 June 2026
+    SEO ROADMAP JULY 2026 · Sources: Route &amp; Country Cleanup rollout plan / PRD Schema Markup (AI Search) / PRD Airport Landing Page Content ·
+    Owners: Facundo (BE) · Jhon/Julio (FE) · Sergio (content) · Kiko (SEO) · Last updated: 2 July 2026
   </footer>
 </div>
 
 <script>
-const cellW = 28, days = 31;
+const cellW = 30, days = 31, TODAY = 2;
 // July 2026: 1 = Wed. dow index 0=Mon..6=Sun
-const dowOf = d => (d + 1) % 7; // d=1 -> 2 (Wed). 0=Mon
+const dowOf = d => (d + 1) % 7;
 const isWE = d => {const x=dowOf(d); return x===5||x===6;};
 const isJhon = d => d>=6 && d<=10;
+const isSergio = d => d===9 || (d>=14 && d<=17);
 const dowL = ['M','T','W','T','F','S','S'];
+const dayCls = d => {
+  const j=isJhon(d), s=isSergio(d);
+  let c = '';
+  if(j&&s) c='both';
+  else if(j) c='jh';
+  else if(s) c='sg';
+  else if(isWE(d)) c='we';
+  if(d===TODAY) c+=' today';
+  return c;
+};
 
+// segs: [start, end, optional label] — labels wrap up to 3 lines inside the bar
 const rows = [
-  {group:'Sprints'},
-  {t:'Sprint 1 · Cleanup', own:'', cls:'phase', a:1, b:13, txt:'Clean route pages + remove destinations'},
-  {t:'Spike · Define logic', own:'', cls:'spike', a:13, b:17, txt:'Landing / route-visibility rules'},
-  {t:'Sprint 2 · Country revamp', own:'', cls:'phase', a:20, b:27, txt:'Fix country + airport top routes'},
-  {t:'Sprint 3 · Content', own:'', cls:'phase', a:27, b:31, txt:'Content · breadcrumb · perf'},
-
-  {group:'🔧 Backend — Facundo'},
-  {t:'CSV → delete/redirect system', own:'Facundo', cls:'be', a:1, b:3, txt:'Build the decision system'},
-  {t:'Phase 0 · Protect lists', own:'Facundo', cls:'be', a:1, b:2, txt:'Freeze 2,422 + SEO-keep'},
-  {t:'Phase 1 · Redirect (301)', own:'Facundo', cls:'be', a:2, b:6, txt:'6,655 redirects'},
-  {t:'Phase 2 · Delete (410)', own:'Facundo', cls:'be', a:6, b:10, txt:'10,487 deletes'},
-  {t:'Route-visibility spike', own:'Facundo', cls:'spike', a:13, b:17, txt:'No-landing / missing route'},
-  {t:'Country page logic (BE)', own:'Facundo', cls:'be', a:21, b:24, txt:'Backend support'},
-
-  {group:'🎨 Frontend — Jhon / Julio'},
-  {t:'Repoint destination links', own:'Julio', cls:'fe', a:7, b:9, txt:'→ country anchor'},
-  {t:'Remove destinations (410+sitemap)', own:'Julio', cls:'fe', a:9, b:13, txt:'Drop from index'},
-  {t:'Airport page · show more routes', own:'Jhon/Julio', cls:'fe', a:21, b:24, txt:'6 → ~25 by market'},
-  {t:'Country page · fix + landing logic', own:'Jhon/Julio', cls:'fe', a:21, b:27, txt:'No broken links'},
-  {t:'Breadcrumb · all routes linked', own:'Jhon/Julio', cls:'fe', a:27, b:31, txt:''},
-  {t:'content-visibility + index', own:'Jhon/Julio', cls:'fe', a:27, b:31, txt:'Fast long pages'},
-
-  {group:'🌍 Content / SEO — Sergio'},
-  {t:'Country content (7 top markets)', own:'Sergio', cls:'content', a:24, b:31, txt:'ES·TR·EG·DO·MA·GR·PT'},
-
-  {group:'👥 People & Measurement'},
-  {t:'Refinement · landing system', own:'Kiko/Facundo', cls:'spike', a:13, b:14, txt:'Agree rules'},
-  {t:'Measure · Search Console', own:'Kiko/SEO', cls:'measure', a:31, b:31, txt:'30/60/90 →'},
+  {t:'Remove destinations', own:'Jhon', cls:'dev', segs:[[1,3]], txt:'Ships Fri 3 Jul · links → country anchor'},
+  {t:'Content — Top 20 Airport Pages', own:'Sergio · trust block + FAQs + meta · 4–5 pages/week', cls:'content', segs:[[1,3,'Malaga'],[6,13,'Faro · Lanzarote · Fuerteventura · Rhodes'],[20,24,'Heraklion · Girona · Larnaca · Corfu · Chania'],[27,31,'Punta Cana · Izmir']]},
+  {t:'Publish — Top 20 Airport Pages', own:'Dev · publish as content lands', cls:'dev', segs:[[13,24,'Malaga · Faro · Lanzarote · Fuerteventura · Rhodes'],[27,31,'Heraklion · Girona · Larnaca · Corfu · Chania · Punta Cana · Izmir']]},
+  {t:'Sprint 1 · Route cleanup', own:'Dev', cls:'phase', segs:[[13,24]], txt:'Protect performing routes + 301/410 cleanup'},
+  {t:'Schemas — Tier-1 (AI search)', own:'Dev · FAQPage → Organization @id + About Us → Offers → Service + @graph · Rich Results validation', cls:'schema', segs:[[13,17,'FAQPage · 8 live pages + template'],[20,22,'Organization @id + About Us'],[23,28,'Offers · fare feed + markup'],[29,31,'Service + @graph']]},
+  {t:'Sprint 2 · Country revamp', own:'Dev', cls:'phase', segs:[[27,31]], txt:'Fix country + airport top routes → Aug'},
+  {t:'Measure · Search Console', own:'Kiko/SEO · 30/60/90 follow-up', cls:'measure', segs:[[31,31,'']]},
 ];
 
 function headerRow(){
   let cells = '';
   for(let d=1; d<=days; d++){
-    const cls = isJhon(d)?'jh':(isWE(d)?'we':'');
-    cells += `<div class="dcell ${cls}"><span class="dow">${dowL[dowOf(d)]}</span>${d}</div>`;
+    cells += `<div class="dcell ${dayCls(d)}"><span class="dow">${dowL[dowOf(d)]}</span>${d}</div>`;
   }
   return `<div class="grow head"><div class="label">Workstream · July</div><div class="track" style="display:flex">${cells}</div></div>`;
 }
 function colsBg(){
   let c='';
   for(let d=1; d<=days; d++){
-    const cls = isJhon(d)?'jh':(isWE(d)?'we':'');
-    c += `<div class="col ${cls}"></div>`;
+    c += `<div class="col ${dayCls(d)}"></div>`;
   }
   return c;
 }
-function bar(r){
-  const left=(r.a-1)*cellW+2, w=(r.b-r.a+1)*cellW-4;
-  return `<div class="bar ${r.cls}" style="left:${left}px;width:${w}px" title="${r.t} (${r.own}) · ${r.a}–${r.b} Jul">${r.txt||r.t}</div>`;
+function bars(r){
+  let out='';
+  for(const seg of r.segs){
+    const [a,b] = seg;
+    const left=(a-1)*cellW+2, w=(b-a+1)*cellW-4;
+    const isFirst = a===r.segs[0][0];
+    const label = seg[2]!==undefined ? seg[2] : (isFirst?(r.txt||r.t):'');
+    out += `<div class="bar ${r.cls}" style="left:${left}px;width:${w}px" title="${r.t} (${r.own}) · ${a}–${b} Jul${seg[2]?' · '+seg[2]:''}">${label}</div>`;
+  }
+  return out;
 }
 let html = headerRow();
 for(const r of rows){
-  if(r.group){
-    html += `<div class="grow grouprow"><div class="label">${r.group}</div><div class="track" style="width:${days*cellW}px"></div></div>`;
-  } else {
-    html += `<div class="grow"><div class="label"><b>${r.t}</b>${r.own?`<span class="own">${r.own}</span>`:''}</div>`+
-            `<div class="track" style="width:${days*cellW}px"><div class="cols">${colsBg()}</div>${bar(r)}</div></div>`;
-  }
+  html += `<div class="grow"><div class="label"><b>${r.t}</b>${r.own?`<span class="own">${r.own}</span>`:''}</div>`+
+          `<div class="track" style="width:${days*cellW}px"><div class="cols">${colsBg()}</div>${bars(r)}</div></div>`;
 }
 document.getElementById('gantt').innerHTML = html;
 </script>
